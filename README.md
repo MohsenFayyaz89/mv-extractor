@@ -34,6 +34,10 @@ Now, run the docker container with
 ```
 sudo docker run -it --ipc=host --env="DISPLAY" -v $(pwd):/home/video_cap -v /tmp/.X11-unix:/tmp/.X11-unix:rw mv_extractor /bin/bash
 ```
+Using GPU in the docker:
+```
+sudo docker run -p 1370:22 --gpus all -it --ipc=host --env="DISPLAY" -v $(pwd):/home/video_cap -v /tmp/.X11-unix:/tmp/.X11-unix:rw -v /mnt:/mnt evp /bin/bash
+```
 Test if everything is sucesfully installed by running the demo script
 ```
 python3 test.py
